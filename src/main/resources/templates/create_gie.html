@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Student Management System</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Nouveau GIE</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/gie}">Gie Management</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center"> Enregistrer un nouveau GIE </h1>
+            <div class="card-body">
+                <form th:action="@{/gies}" th:object="${gie}" method="POST">
+                    <div class="form-group">
+                        <label> Code </label>
+                        <input
+                                type="text"
+                                name="code"
+                                th:field="*{code}"
+                                class="form-control"
+                                placeholder="Code"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label> Nom GIE </label>
+                        <input
+                                type="text"
+                                name="nomGie"
+                                th:field="*{nomGie}"
+                                class="form-control"
+                                placeholder="Nom du GIE"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label> Commune </label>
+                        <input
+                                type="text"
+                                name="commune"
+                                th:field="*{commune}"
+                                class="form-control"
+                                placeholder="Commune"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label> Nom de la Présidente </label>
+                        <input
+                                type="text"
+                                name="nomPrésidente"
+                                th:field="*{nomPresidente}"
+                                class="form-control"
+                                placeholder="Nom Présidente"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label> Nombre membre </label>
+                        <input
+                                type="text"
+                                name="nombreMembre"
+                                th:field="*{nombreMembre}"
+                                class="form-control"
+                                placeholder="Nombre Membre"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="formelOuinformel">Formel ou Informel</label>
+                        <select name="formelOuinformel" id="formelOuinformel" class="form-control">
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label> Contact </label>
+                        <input
+                                type="text"
+                                name="contact"
+                                th:field="*{contact}"
+                                class="form-control"
+                                placeholder="Contact"
+                        />
+                    </div>
+
+                    <div class="box-footer">
+                        <button id="enregistrerBtn" type="submit" class="btn btn-primary">Enregistrer</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
